@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
+import { Box, TextField, Divider } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -10,22 +10,26 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ReusableModal from "../Modal/ReusableModal";
 import { useNavigate, useLocation } from "react-router-dom";
 import Logo from "../../Asset/Logo/Logo.jpeg";
-const pages = [
-  { link: "/prescriptions", page: "Prescriptions" },
-  { link: "/services", page: "Services" },
 
-  { link: "/shop", page: "Shop" },
-  { link: "/carhome", page: "Car Home" },
-  { link: "/weightloss", page: "Weight Loss" },
-  { link: "/womenshealth", page: "Women's Health" },
-  { link: "/menshealth", page: "Men's Health" },
+const pages = [
+  { id: 1, link: "/prescriptions", page: "Prescriptions" },
+  { id: 2, link: "/services", page: "Services" },
+  { id: 3, link: "/shop", page: "Shop" },
+  { id: 4, link: "/carhome", page: "Car Home" },
+  { id: 5, link: "/weightloss", page: "Weight Loss" },
+  { id: 6, link: "/womenshealth", page: "Women's Health" },
+  { id: 7, link: "/menshealth", page: "Men's Health" },
 ];
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState();
+
   const [anchorElNav, setAnchorElNav] = useState(null);
-  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -47,6 +51,8 @@ const Header = () => {
     // Mobile View
     // console.log(link);
   };
+
+  const handleSubmit = () => {};
 
   return (
     <div>
@@ -131,22 +137,25 @@ const Header = () => {
                   }}
                   sx={{
                     "&:hover": {
-                      color: "#FFAC1C",
+                      // color: "#FFAC1C",
                     },
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 0.5,
                     my: 2,
-                    display: "block",
-                    fontWeight: "600",
+                    fontWeight: 600,
                     color: location.pathname === item.link ? "black" : "black",
                   }}
                 >
                   {item.page}
+                  {(item.id === 6 || item.id === 7) && <ArrowDropDownIcon />}
                 </Button>
               ))}
 
               <Box sx={{ flexGrow: 0 }}>
                 {" "}
                 <Button
-                  onClick={handleOpenUserMenu}
+                  // onClick={handleOpenUserMenu}
                   sx={{
                     padding: "10px 20px 10px 20px",
                     backgroundColor: "#FB642D",
@@ -159,10 +168,80 @@ const Header = () => {
                       transform: "scale(1.05)", // zoom in
                     },
                   }}
+                  onClick={() => setOpen(true)}
                 >
                   {" "}
                   Login / Sign Up
                 </Button>
+                <ReusableModal
+                  open={open}
+                  onClose={() => setOpen(false)}
+                  title="Create an account or sign in"
+                  width={{ xs: "90%", sm: "60%", md: "400px" }}
+                >
+                  {" "}
+                  <TextField
+                    fullWidth
+                    label="Email Address"
+                    type="email"
+                    variant="outlined"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    sx={{ mt: 4 }}
+                  />
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      mt: 5,
+                    }}
+                  >
+                    <Button
+                      onClick={handleSubmit}
+                      sx={{
+                        backgroundColor: "#FB642D",
+                        color: "white",
+                        py: 1,
+                        px: 2,
+                        transition: "transform 0.3s ease", // smooth animation
+                        "&:hover": {
+                          transform: "scale(1.05)", // zoom in
+                        },
+                      }}
+                    >
+                      Continue
+                    </Button>
+                  </Box>
+                  <Typography sx={{ mt: 4 }}>
+                    By clicking continue, you accept the
+                    <span style={{ color: "orange" }}>
+                      {" "}
+                      Terms and Conditions & Privacy Policy
+                    </span>
+                  </Typography>
+                  <Divider sx={{ mt: 5 }} />
+                  <Box
+                    sx={{ mt: 5, display: "flex", justifyContent: "center" }}
+                  >
+                    <Button
+                      variant="contained"
+                      onClick={handleSubmit}
+                      sx={{
+                        color: "white",
+                        py: 1,
+                        px: 2,
+                        fontSize: "1.3rem",
+                        textTransform: "none",
+                        transition: "transform 0.3s ease", // smooth animation
+                        "&:hover": {
+                          transform: "scale(1.05)", // zoom in
+                        },
+                      }}
+                    >
+                      Continue to NHS Login
+                    </Button>
+                  </Box>
+                </ReusableModal>
               </Box>
             </Box>
           </Toolbar>

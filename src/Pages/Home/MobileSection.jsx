@@ -88,25 +88,6 @@ const MobileSection = () => {
                 mt: { xs: 4, md: 7 },
               }}
             >
-              {" "}
-              {/* <Box
-                component="img"
-                src={AppStore}
-                alt="AppStore"
-                sx={{
-                  width: { xs: "40%", md: "30%" },
-                  height: { xs: "50px", md: "50px" },
-                }}
-              />
-              <Box
-                component="img"
-                src={GooglePlay}
-                alt="GooglePlay"
-                sx={{
-                  width: { xs: "40%", md: "30%" },
-                  height: { xs: "50px", md: "50px" },
-                }}
-              /> */}
               {MobileStores.map((val, index) => (
                 <Box
                   key={index}
@@ -132,7 +113,7 @@ const MobileSection = () => {
                     src={val.img}
                     alt="AppStore"
                     sx={{
-                      width: { xs: "40%", md: "30%" },
+                      width: { xs: "100%", md: "30%" },
                       height: { xs: "50px", md: "50px" },
                     }}
                   />
