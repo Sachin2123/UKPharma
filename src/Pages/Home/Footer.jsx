@@ -270,19 +270,24 @@ const Footer = () => {
       <Box
         sx={{
           backgroundColor: "white",
-          py: 0.5,
-          px: 7,
+          py: 2,
+          px: { xs: 2, sm: 3, md: 7 }, // responsive padding
           display: "flex",
-          justifyContent: "space-between",
-          mx: 10,
+          flexWrap: "wrap", // allows items to move to next line on small screens
+          justifyContent: { xs: "center", md: "space-between" }, // center on mobile, spaced on desktop
+          gap: 1, // space between items when wrapped
+          mx: { xs: 0, md: 10 },
         }}
       >
-        {FooterLastContent.map((val, index) => (
+        {FooterLastContent.map((val) => (
           <Typography
             key={val.id}
             sx={{
-              fontWeight: "600",
-              fontSize: "1.0rem",
+              fontWeight: 600,
+              fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1rem" }, // responsive font size
+              whiteSpace: "nowrap", // prevent text from breaking awkwardly
+              cursor: "pointer",
+              transition: "color 0.3s ease",
               "&:hover": {
                 color: "#FB642D",
               },
