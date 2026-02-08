@@ -3,6 +3,18 @@ import { Box, Typography, Container } from "@mui/material";
 import AppStore from "../../Asset/Rating/AppStore.jpeg";
 import GooglePlay from "../../Asset/Rating/GooglePlay.jpeg";
 const MobileSection = () => {
+  const MobileStores = [
+    {
+      id: 1,
+      img: AppStore,
+      link: "https://apps.apple.com/gb/app/inspire-pharmacy-ibstock/id6748751178",
+    },
+    {
+      id: 2,
+      img: GooglePlay,
+      link: "https://play.google.com/store/apps/details?id=com.healthera.healtheraapp.jayty&pcampaignid=web_share",
+    },
+  ];
   return (
     <Box
       sx={{
@@ -77,7 +89,7 @@ const MobileSection = () => {
               }}
             >
               {" "}
-              <Box
+              {/* <Box
                 component="img"
                 src={AppStore}
                 alt="AppStore"
@@ -94,7 +106,38 @@ const MobileSection = () => {
                   width: { xs: "40%", md: "30%" },
                   height: { xs: "50px", md: "50px" },
                 }}
-              />
+              /> */}
+              {MobileStores.map((val, index) => (
+                <Box
+                  key={index}
+                  component="a"
+                  href={val.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    display: "inline-block",
+                    width: { xs: "120px", sm: "140px", md: "100%" },
+                    height: "50px",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      filter: "blur(0px)", // if you want hover clear effect
+                    },
+                  }}
+                >
+                  <Box
+                    key={index}
+                    component="img"
+                    src={val.img}
+                    alt="AppStore"
+                    sx={{
+                      width: { xs: "40%", md: "30%" },
+                      height: { xs: "50px", md: "50px" },
+                    }}
+                  />
+                </Box>
+              ))}
             </Box>
           </Box>
         </Box>

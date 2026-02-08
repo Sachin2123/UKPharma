@@ -13,6 +13,18 @@ import MobileSection from "../Home/MobileSection";
 import Footer from "../Home/Footer";
 
 const Home = () => {
+  const MobileStores = [
+    {
+      id: 2,
+      img: AppStore,
+      link: "https://apps.apple.com/gb/app/inspire-pharmacy-ibstock/id6748751178",
+    },
+    {
+      id: 3,
+      img: GooglePlay,
+      link: "https://play.google.com/store/apps/details?id=com.healthera.healtheraapp.jayty&pcampaignid=web_share",
+    },
+  ];
   return (
     <Box
       sx={{
@@ -145,19 +157,43 @@ const Home = () => {
               sx={{
                 display: "flex",
                 flexDirection: { xs: "row", md: "column" },
-                gap: { md: 2, xs: 1 },
+                gap: { xs: 1, md: 2 },
+                flexWrap: { xs: "wrap", md: "nowrap" }, // wrap on small screens
+                justifyContent: { xs: "center", md: "flex-start" },
+                alignItems: "center",
               }}
             >
-              <img
-                src={AppStore}
-                alt="AppStore"
-                style={{ width: "100%", height: "50px" }}
-              />
-              <img
-                src={GooglePlay}
-                alt="GooglePlay"
-                style={{ width: "100%", height: "50px" }}
-              />
+              {MobileStores.map((val, index) => (
+                <Box
+                  key={index}
+                  component="a"
+                  href={val.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    display: "inline-block",
+                    width: { xs: "120px", sm: "140px", md: "100%" },
+                    height: "50px",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      filter: "blur(0px)", // if you want hover clear effect
+                    },
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={val.img}
+                    alt={val.img}
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+              ))}
             </Box>
           </Box>
 
