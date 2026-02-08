@@ -49,8 +49,8 @@ const PatientReview = () => {
         backgroundColor: "black",
         display: "flex",
         flexDirection: "column",
-        px: { xs: 2, md: 10 },
-        py: 7,
+        px: { xs: 3, md: 10 },
+        py: { xs: 5, md: 7 },
       }}
     >
       {/* HEADING */}
@@ -101,7 +101,7 @@ const PatientReview = () => {
             sx={{
               mt: 1,
               minWidth: { xs: "260px", sm: "280px", md: "300px" },
-              mb: { xs: 10, md: 0 },
+              mb: { xs: 3, md: 0 },
               maxWidth: "300px",
               flexShrink: 0,
               scrollSnapAlign: "start",

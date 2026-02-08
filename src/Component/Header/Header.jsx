@@ -56,7 +56,7 @@ const Header = () => {
           boxShadow: "none",
           top: 0,
           backgroundColor: { md: "white", sm: "black", xs: "transparent" },
-          py: 2,
+          py: { xs: 1, md: 2 },
         }}
       >
         <Container maxWidth="xl">

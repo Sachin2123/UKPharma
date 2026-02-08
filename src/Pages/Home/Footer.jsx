@@ -134,6 +134,8 @@ const Footer = () => {
           backgroundColor: "black",
           color: "white",
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          gap: { xs: 5, md: 5 },
           justifyContent: "space-around",
           px: { xs: 2, md: 10 },
           py: 7,

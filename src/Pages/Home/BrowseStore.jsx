@@ -6,20 +6,29 @@ const BrowseStore = () => {
     "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/senior-person-using-smartphone-1-e1745412035492-1024x606.webp";
   return (
     <Box
-      sx={{ px: 10, py: 7, display: "flex", justifyContent: "Center", gap: 20 }}
+      sx={{
+        px: { xs: 3, md: 10 },
+        py: { xs: 5, md: 7 },
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+
+        justifyContent: "Center",
+        gap: { xs: 5, md: 20 },
+      }}
     >
-      <img
+      <Box
+        component="img"
         src={BrowseStoreImgSrc}
         alt="BrowseStoreImgSrc Image"
-        style={{
-          width: "50%",
-          height: "60%%",
+        sx={{
+          width: { xs: "100%", md: "50%" },
+          height: { xs: "100%", md: "60%" },
           objectFit: "cover",
           objectPosition: "center center",
           borderRadius: "30px 30px 30px 30px",
           boxShadow: "0px 4px 20px rgba(0,0,0,0.2)",
         }}
-      ></img>
+      ></Box>
       <Box
         sx={{
           display: "flex",

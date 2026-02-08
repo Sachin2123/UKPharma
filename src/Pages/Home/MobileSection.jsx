@@ -70,22 +70,30 @@ const MobileSection = () => {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: "column",
-                gap: 4,
+                flexDirection: { xs: "row", md: "column" },
+                gap: 5,
                 justifyContent: "center",
-                mt: 7,
+                mt: { xs: 4, md: 7 },
               }}
             >
               {" "}
-              <img
+              <Box
+                component="img"
                 src={AppStore}
                 alt="AppStore"
-                style={{ width: "30%", height: "50px" }}
+                sx={{
+                  width: { xs: "40%", md: "30%" },
+                  height: { xs: "50px", md: "50px" },
+                }}
               />
-              <img
+              <Box
+                component="img"
                 src={GooglePlay}
                 alt="GooglePlay"
-                style={{ width: "30%", height: "50px" }}
+                sx={{
+                  width: { xs: "40%", md: "30%" },
+                  height: { xs: "50px", md: "50px" },
+                }}
               />
             </Box>
           </Box>

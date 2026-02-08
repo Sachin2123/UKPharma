@@ -7,11 +7,13 @@ const BookService = () => {
   return (
     <Box
       sx={{
-        px: 10,
-        py: 7,
+        px: { xs: 3, md: 10 },
+        py: { xs: 5, md: 7 },
         display: "flex",
         justifyContent: "Center",
-        gap: 20,
+        flexDirection: { xs: "column", md: "row" },
+
+        gap: { xs: 5, md: 20 },
         backgroundColor: "#FB642D",
       }}
     >
@@ -71,7 +73,7 @@ const BookService = () => {
               backgroundColor: "white",
               color: "black",
               borderRadius: "10px 10px 10px 10px",
-              mr: 4,
+              // mr: 4,
               transition: "transform 0.3s ease", // smooth animation
               "&:hover": {
                 transform: "scale(1.05)", // zoom in
@@ -83,18 +85,19 @@ const BookService = () => {
           </Button>
         </Box>
       </Box>
-      <img
+      <Box
+        component="img"
         src={BookServiceImgSrc}
         alt="Consult Pharmacist Image"
-        style={{
-          width: "50%",
-          height: "60%%",
+        sx={{
+          width: { xs: "100%", md: "50%" },
+          height: { xs: "100%", md: "60%" },
           objectFit: "cover",
           objectPosition: "center center",
           borderRadius: "30px 30px 30px 30px",
           boxShadow: "0px 4px 20px rgba(0,0,0,0.2)",
         }}
-      ></img>
+      ></Box>
     </Box>
   );
 };
