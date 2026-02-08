@@ -14,20 +14,29 @@ const ConsultPharmacist = () => {
     "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/pharmacist-work-5-1024x683-1.webp";
   return (
     <Box
-      sx={{ px: 10, py: 7, display: "flex", justifyContent: "Center", gap: 20 }}
+      sx={{
+        px: { xs: 3, md: 10 },
+        py: { xs: 5, md: 7 },
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        justifyContent: "Center",
+        gap: { xs: 5, md: 20 },
+      }}
     >
-      <img
+      <Box
+        component="img"
         src={ConsultImgSrc}
         alt=""
-        style={{
-          width: "50%",
-          height: "60%%",
+        sx={{
+          width: { xs: "100%", md: "50%" },
+          height: { xs: "100%", md: "60%" },
           objectFit: "cover",
           objectPosition: "center center",
-          borderRadius: "30px 30px 30px 30px",
+          borderRadius: "30px",
           boxShadow: "0px 4px 20px rgba(0,0,0,0.2)",
         }}
-      ></img>
+      />
+
       <Box
         sx={{
           display: "flex",
@@ -38,7 +47,10 @@ const ConsultPharmacist = () => {
       >
         <Typography
           sx={{
-            fontSize: "clamp(2.1rem, 1.9154rem + 0.8205vw, 2.5rem)",
+            fontSize: {
+              xs: "clamp(1.7rem, 1.9154rem + 0.8205vw, 1.7rem)",
+              md: "clamp(2.1rem, 1.9154rem + 0.8205vw, 2.5rem)",
+            },
             fontFamily: "Quicksand, Sans-serif",
             fontWeight: "700",
           }}
@@ -49,7 +61,7 @@ const ConsultPharmacist = () => {
           sx={{
             textAlign: "center",
             fontFamily: "Nunito",
-            fontSize: { xs: "1rem", md: "1.2rem" },
+            fontSize: { xs: "1.2rem", md: "1.2rem" },
             fontWeight: 500,
             color: "#444",
             maxWidth: "650px",
@@ -67,7 +79,7 @@ const ConsultPharmacist = () => {
             display: "grid",
             gap: 3,
             gridTemplateColumns: {
-              xs: "1fr",
+              xs: "repeat(2, 1fr)",
               sm: "repeat(2, 1fr)",
               md: "repeat(3, 1fr)",
             },
@@ -116,14 +128,19 @@ const ConsultPharmacist = () => {
           ))}
         </Box>
 
-        <Box sx={{ display: "flex", mt: 4, justifyContent: "center" }}>
+        <Box
+          sx={{
+            mt: 4,
+            justifyContent: "center",
+          }}
+        >
           <Button
             sx={{
               padding: "10px 20px 10px 20px",
               backgroundColor: "#FB642D",
               color: "white",
               borderRadius: "10px 10px 10px 10px",
-              mr: 4,
+              // mr: 4,
               transition: "transform 0.3s ease", // smooth animation
               "&:hover": {
                 transform: "scale(1.05)", // zoom in

@@ -56,15 +56,18 @@ const Visit = () => {
         backgroundColor: "#3B5768",
         display: "flex",
         flexDirection: "column",
-        px: 10,
-        py: 7,
+        px: { xs: 3, md: 10 },
+        py: { xs: 5, md: 7 },
         justifyContent: "Center",
       }}
     >
       <Box sx={{ justifyContent: "Center", display: "flex" }}>
         <Typography
           sx={{
-            fontSize: "clamp(2.1rem, 1.9154rem + 0.8205vw, 2.5rem)",
+            fontSize: {
+              xs: "clamp(1.5rem, 1.9154rem + 0.8205vw, 1.5rem)",
+              md: "clamp(2.1rem, 1.9154rem + 0.8205vw, 2.5rem)",
+            },
             fontWeight: "700",
             fontFamily: "Quicksand, Sans-serif",
             color: "white",
@@ -81,6 +84,7 @@ const Visit = () => {
             fontFamily: "Quicksand, Sans-serif",
             color: "white",
             textAlign: "center",
+            mt: { xs: 3, md: 0 },
           }}
         >
           Get the care you need from home for selected conditions. Complete a
@@ -92,7 +96,7 @@ const Visit = () => {
       <Box
         sx={{
           color: "white",
-          mt: 8,
+          mt: { xs: 6, md: 8 },
           gap: 3,
           display: "grid",
           gridTemplateColumns: {

@@ -36,7 +36,13 @@ const Services = () => {
     },
   ];
   return (
-    <Box sx={{ px: 10, py: 7, backgroundColor: "white" }}>
+    <Box
+      sx={{
+        px: { xs: 3, md: 10 },
+        py: { xs: 5, md: 7 },
+        backgroundColor: "white",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -50,13 +56,17 @@ const Services = () => {
             color: "black",
             fontWeight: "700",
             fontFamily: "Quicksand, Sans-serif",
-            fontSize: "clamp(2.1rem, 1.9154rem + 0.8205vw, 2.5rem)",
+            fontSize: {
+              xs: "clamp(1.5rem, 1.9154rem + 0.8205vw, 1.5rem)",
+              md: "clamp(2.1rem, 1.9154rem + 0.8205vw, 2.5rem)",
+            },
           }}
         >
           Our Most Popular Services
         </Typography>
         <Button
           sx={{
+            mt: { xs: 4, md: 0 },
             padding: "10px 20px 10px 20px",
             backgroundColor: "#FB642D",
             color: "white",
@@ -75,7 +85,7 @@ const Services = () => {
       <Box
         sx={{
           color: "white",
-          mt: 8,
+          mt: { xs: 6, md: 8 },
           // display: "flex",
           gap: 2,
           display: "grid",
