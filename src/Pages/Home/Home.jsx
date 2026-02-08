@@ -20,7 +20,7 @@ const Home = () => {
       }}
     >
       {/* HERO SECTION */}
-      <Box sx={{ mt: "7rem", position: "relative" }}>
+      <Box sx={{ mt: { xs: "0rem", md: "5rem" }, position: "relative" }}>
         {/* HERO IMAGE */}
         <Box className="dashboard-img">
           <Box
@@ -30,7 +30,7 @@ const Home = () => {
             sx={{
               width: "100%",
               height: { xs: "auto", md: "90vh" }, // responsive height
-              minHeight: { xs: "450px", md: "unset" },
+              minHeight: { xs: "550px", md: "700px" },
               objectFit: "cover",
             }}
           />
@@ -41,7 +41,7 @@ const Home = () => {
           className="dashboard-img-container"
           sx={{
             position: "absolute",
-            top: { xs: "50%", md: "50%" },
+            top: { xs: "65%", md: "52%" },
             left: { xs: "50%", md: "28%" },
             transform: "translate(-50%, -50%)",
             color: "white",
@@ -53,9 +53,12 @@ const Home = () => {
             variant="h4"
             sx={{
               fontFamily: "Quicksand, Sans-serif",
-              fontSize: "clamp(3rem, 2.5385rem + 2.0513vw, 4rem)",
               fontWeight: "700",
-              mt: 5,
+              mt: { xs: -15, md: 5 },
+              fontSize: {
+                xs: "2rem",
+                md: "clamp(3rem, 2.5385rem + 2.0513vw, 4rem)",
+              },
             }}
           >
             Welcome to
@@ -64,12 +67,15 @@ const Home = () => {
           <Typography
             sx={{
               fontFamily: "Quicksand, Sans-serif",
-              fontSize: "clamp(3rem, 2.5385rem + 2.0513vw, 4rem)",
               fontWeight: "700",
               background: "linear-gradient(90deg, #FB642D, #FFFFFF)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              mt: -2,
+              mt: { xs: 0, md: -2 },
+              fontSize: {
+                xs: "2rem",
+                md: "clamp(3rem, 2.5385rem + 2.0513vw, 4rem)",
+              },
             }}
           >
             Inspire Pharmacy
@@ -79,7 +85,7 @@ const Home = () => {
             Free NHS Prescription Delivery
           </Typography>
 
-          <Typography sx={{ fontSize: "1.125rem", mt: 2 }}>
+          <Typography sx={{ fontSize: { xs: "1rem", md: "1.125rem" }, mt: 2 }}>
             With Inspire Pharmacy, you have access to the healthcare you need,
             when <br /> you need it. Easily book a service with us in just a few
             clicks.
@@ -90,7 +96,7 @@ const Home = () => {
             sx={{
               display: "flex",
               gap: 5,
-              mt: 4,
+              mt: { xs: 2, md: 4 },
               justifyContent: { xs: "center", md: "flex-start" },
             }}
           >
@@ -123,19 +129,25 @@ const Home = () => {
             sx={{
               display: "flex",
               gap: 5,
-              mt: 4,
+              mt: { xs: 3, md: 4 },
               justifyContent: { xs: "center", md: "flex-start" },
             }}
           >
-            <Box sx={{ mt: 1 }}>
+            {/* <Box sx={{ mt: 1 }}>
               <img
                 src={Rater1}
                 alt="Rater1"
                 style={{ width: "30px", height: "30px", borderRadius: "50%" }}
               />
-            </Box>
+            </Box> */}
 
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "row", md: "column" },
+                gap: { md: 2, xs: 1 },
+              }}
+            >
               <img
                 src={AppStore}
                 alt="AppStore"
@@ -153,16 +165,19 @@ const Home = () => {
           <Box
             sx={{
               display: "flex",
-              gap: 3,
-              mt: 4,
+              gap: { xs: 2, md: 3 },
+              mt: { xs: 3, md: 4 },
               mb: 5,
+              px: { xs: 1, md: 0 },
+
+              flexDirection: { xs: "row", md: "row" },
               justifyContent: { xs: "center", md: "flex-start" },
-              flexWrap: "wrap",
             }}
           >
             <Button
               sx={{
-                padding: "10px 20px",
+                fontSize: { xs: "0.8rem", md: "1rem" },
+                padding: { xs: "5px 15px", md: "10px 20px" },
                 backgroundColor: "#FB642D",
                 color: "white",
                 borderRadius: "10px",
@@ -175,7 +190,8 @@ const Home = () => {
 
             <Button
               sx={{
-                padding: "10px 20px",
+                fontSize: { xs: "0.8rem", md: "1rem" },
+                padding: { xs: "5px 15px", md: "10px 20px" },
                 backgroundColor: "#FF2E2E",
                 color: "white",
                 borderRadius: "10px",

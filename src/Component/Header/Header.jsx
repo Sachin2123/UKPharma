@@ -13,7 +13,6 @@ import MenuItem from "@mui/material/MenuItem";
 import { useNavigate, useLocation } from "react-router-dom";
 import Logo from "../../Asset/Logo/Logo.jpeg";
 const pages = [
-  { link: "/", page: "" },
   { link: "/prescriptions", page: "Prescriptions" },
   { link: "/services", page: "Services" },
 
@@ -54,11 +53,9 @@ const Header = () => {
       <AppBar
         position="fixed"
         sx={{
-          // backgroundColor: "transparent",
           boxShadow: "none",
           top: 0,
-          backgroundColor: "white",
-          // backdropFilter: "blur(10px)",
+          backgroundColor: { md: "white", sm: "black", xs: "transparent" },
           py: 2,
         }}
       >
@@ -74,13 +71,10 @@ const Header = () => {
                   onClick={handleOpenNavMenu}
                   color="inherit"
                 >
-                  <MenuIcon sx={{ fontSize: "25px" }} />
+                  <MenuIcon sx={{ fontSize: "30px", color: "black" }} />
                 </IconButton>
               </Tooltip>
 
-              {/* <Box>
-                <img src={Logo} alt="Logo"></img>
-              </Box> */}
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
