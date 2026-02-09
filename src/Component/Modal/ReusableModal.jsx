@@ -1,6 +1,6 @@
 // ReusableModal.jsx
 import React from "react";
-import { Modal, Box, Typography, IconButton, Button } from "@mui/material";
+import { Modal, Box, Typography, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 const ReusableModal = ({
