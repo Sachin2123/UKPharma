@@ -125,7 +125,14 @@ const Header = () => {
                 justifyContent: "center",
               }}
             >
-              <Box sx={{}}>
+              <Box
+                sx={{
+                  "&:hover": {
+                    cursor: "pointer",
+                  },
+                }}
+                onClick={() => navigate("/")}
+              >
                 <img src={Logo} alt="Logo" style={{ width: "230px" }}></img>
               </Box>
               {pages.map((item, index) => (

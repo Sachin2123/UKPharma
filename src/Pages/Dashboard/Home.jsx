@@ -3,14 +3,6 @@ import { Box, Button, Typography } from "@mui/material";
 import Rater1 from "../../Asset/Rating/1stRater.jpeg";
 import AppStore from "../../Asset/Rating/AppStore.jpeg";
 import GooglePlay from "../../Asset/Rating/GooglePlay.jpeg";
-import Services from "../Home/Services";
-import Visit from "../Home/Visit";
-import ConsultPharmacist from "../Home/ConsultPharmacist";
-import BookService from "../Home/BookService";
-import BrowseStore from "../Home/BrowseStore";
-import PatientReview from "../Home/PatientReview";
-import MobileSection from "../Home/MobileSection";
-import Footer from "../Home/Footer";
 
 const Home = () => {
   const MobileStores = [
@@ -145,14 +137,6 @@ const Home = () => {
               justifyContent: { xs: "center", md: "flex-start" },
             }}
           >
-            {/* <Box sx={{ mt: 1 }}>
-              <img
-                src={Rater1}
-                alt="Rater1"
-                style={{ width: "30px", height: "30px", borderRadius: "50%" }}
-              />
-            </Box> */}
-
             <Box
               sx={{
                 display: "flex",
@@ -240,16 +224,6 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-
-      {/* OTHER SECTIONS */}
-      <Services />
-      <Visit />
-      <ConsultPharmacist />
-      <BookService />
-      <BrowseStore />
-      <PatientReview />
-      <MobileSection />
-      <Footer />
     </Box>
   );
 };
