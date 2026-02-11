@@ -7,12 +7,13 @@ const Prescription = () => {
   return (
     <Box
       sx={{
+        px: { xs: 3, md: 10 },
+        py: { xs: 5, md: 0 },
         height: { xs: "auto", md: "90vh" },
-
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        mt: { xs: "5rem", md: "6.2rem" },
+        mt: { xs: "0rem", md: "6.2rem" },
         backgroundColor:
           "color-mix(in oklab, rgb(251, 100, 45) 10%, rgb(255, 255, 255))",
       }}
@@ -26,16 +27,23 @@ const Prescription = () => {
         {/* Heading */}
         <Typography
           sx={{
-            mt: { xs: 4, md: 0 }, // ✅ margin-top controlled here
+            mt: { xs: 2, md: 0 }, // ✅ margin-top controlled here
             textAlign: "center",
             fontWeight: "700",
-            fontSize: "2rem",
+            fontSize: { xs: "1.5rem", md: "2rem" },
           }}
         >
           How would you like to add your prescription?
         </Typography>
 
-        <Box sx={{ display: "flex", flexDirection: "", gap: 5, mt: 5 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            gap: 5,
+            mt: 5,
+          }}
+        >
           {/* Connect to NHS */}
 
           <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
@@ -61,18 +69,22 @@ const Prescription = () => {
                 <Button
                   variant="contained"
                   startIcon={
-                    <img
+                    <Box
+                      component="img"
                       src={NHS}
                       alt="NHS Logo"
-                      style={{ width: "52px", height: "28px" }}
+                      sx={{
+                        width: { xs: "45px", md: "52px" },
+                        height: { xs: "25px", md: "28px" },
+                      }}
                     />
                   }
                   sx={{
                     color: "white",
-                    fontSize: "1.1rem",
+                    fontSize: { xs: "0.72rem", md: "1.1rem" },
                     textTransform: "none",
                     borderRadius: "10px",
-                    px: 3,
+                    px: { xs: 2, md: 3 },
                     py: 1.5,
                     gap: 1,
                     transition: "all 0.3s ease",
@@ -119,7 +131,7 @@ const Prescription = () => {
                 borderRadius: "30px",
                 backgroundColor: "white",
                 py: 4,
-                px: 7,
+                px: { xs: 2, md: 7 },
                 display: "flex",
                 justifyContent: "space-around",
                 alignItems: "center",
@@ -128,7 +140,7 @@ const Prescription = () => {
               <Typography
                 sx={{
                   fontWeight: "500",
-                  fontSize: "1.1rem",
+                  fontSize: { xs: "0.9rem", md: "1.1rem" },
                   fontFamily: "Inter, Arial, sans-serif",
                 }}
               >
@@ -139,7 +151,7 @@ const Prescription = () => {
                 sx={{
                   backgroundColor: "black",
                   color: "white",
-                  py: 1,
+                  py: { xs: 0.5, md: 1 },
                   px: 2,
                   textTransform: "none",
                   transition: "transform 0.3s ease",
@@ -158,8 +170,8 @@ const Prescription = () => {
             <Box
               sx={{
                 backgroundColor: "white",
-                py: 11,
-                px: 7,
+                py: { xs: 6, md: 11 },
+                px: { xs: 5, md: 7 },
                 borderRadius: "30px",
               }}
             >
@@ -167,7 +179,7 @@ const Prescription = () => {
                 sx={{
                   textAlign: "start",
                   fontWeight: "700",
-                  fontSize: "1.8rem",
+                  fontSize: { xs: "1.5rem", md: "1.8rem" },
                   fontFamily: "Inter, Arial, sans-serif",
                   lineHeight: "1.334",
                 }}
@@ -193,8 +205,8 @@ const Prescription = () => {
 
               <TextField
                 placeholder="Medicine name (e.g. Amoxicilin)"
-                label="Email Address"
-                sx={{ mt: 3, width: "80%" }}
+                label="Search for your medicine"
+                sx={{ mt: 3, width: { xs: "100%", md: "80%" } }}
               />
 
               <Typography sx={{ mt: 4, fontWeight: 500 }}>
