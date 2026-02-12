@@ -3,7 +3,11 @@ import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlin
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 import NHS from "../../Asset/NHS Image/NHS.svg";
 
-const Prescription = () => {
+const Prescription = ({ openModal }) => {
+  //   const handleSubmit = () => {
+  //     // console.log("Sign In");
+  //     setOpen(true);
+  //   };
   return (
     <Box
       sx={{
@@ -159,6 +163,7 @@ const Prescription = () => {
                     transform: "scale(1.05)",
                   },
                 }}
+                onClick={openModal}
               >
                 Sign in
               </Button>

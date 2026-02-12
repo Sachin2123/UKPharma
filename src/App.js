@@ -1,3 +1,5 @@
+import { useState } from "react";
+import ReusableModal from "./Component/Modal/ReusableModal";
 import Header from "./Component/Header/Header";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Prescription from "./Pages/Prescription/Prescription";
@@ -11,12 +13,21 @@ import MensHealth from "./Pages/MensHealth/MensHealth";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Router>
       <Header />
+      <ReusableModal open={open} onClose={handleClose} />
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/prescriptions" element={<Prescription />} />
+        <Route
+          path="/prescriptions"
+          element={<Prescription openModal={handleOpen} />}
+        />
         <Route path="/services" element={<Services />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/carhome" element={<CarHome />} />

@@ -14,7 +14,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ReusableModal from "../Modal/ReusableModal";
 import { useNavigate, useLocation } from "react-router-dom";
 import Logo from "../../Asset/Logo/Logo.jpeg";
-
+import NHS from "../../Asset/NHS Image/NHS.svg";
 const pages = [
   { id: 1, link: "/prescriptions", page: "Prescriptions" },
   { id: 2, link: "/services", page: "Services" },
@@ -231,6 +231,17 @@ const Header = () => {
                     sx={{ mt: 5, display: "flex", justifyContent: "center" }}
                   >
                     <Button
+                      startIcon={
+                        <Box
+                          component="img"
+                          src={NHS}
+                          alt="NHS Logo"
+                          sx={{
+                            width: { xs: "45px", md: "52px" },
+                            height: { xs: "25px", md: "28px" },
+                          }}
+                        />
+                      }
                       variant="contained"
                       onClick={handleSubmit}
                       sx={{
