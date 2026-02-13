@@ -187,8 +187,8 @@ const Services = () => {
                   {/* Book Now */}
                   <Button
                     sx={{
-                      fontSize: "1rem",
-                      px: { xs: 0, md: 2 },
+                      fontSize: { xs: "0.9rem", md: "1rem" },
+                      px: { xs: 1, md: 2 },
                       color: "white",
                       backgroundColor: "black",
                       textTransform: "none",
@@ -205,8 +205,8 @@ const Services = () => {
                   {/* Read */}
                   <Button
                     sx={{
-                      fontSize: "1rem",
-                      px: 2,
+                      fontSize: { xs: "0.9rem", md: "1rem" },
+                      px: { xs: 1, md: 2 },
                       color: "white",
                       backgroundColor: "black",
                       textTransform: "none",
