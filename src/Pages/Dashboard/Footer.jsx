@@ -1,5 +1,4 @@
 import { Box, Typography, Divider } from "@mui/material";
-import { useLocation } from "react-router-dom";
 import logo from "../../Asset/Logo/Logo.jpeg";
 
 const Footer = ({ bgColor, textColor, p }) => {
@@ -128,8 +127,6 @@ const Footer = ({ bgColor, textColor, p }) => {
     },
   ];
 
-  const location = useLocation();
-  const page = location.pathname === "/services";
   return (
     <Box>
       <Box
