@@ -188,7 +188,7 @@ const Services = () => {
                   <Button
                     sx={{
                       fontSize: "1rem",
-                      px: { xs: 1, md: 2 },
+                      px: { xs: 0, md: 2 },
                       color: "white",
                       backgroundColor: "black",
                       textTransform: "none",
