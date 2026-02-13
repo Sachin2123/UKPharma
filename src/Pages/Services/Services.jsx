@@ -130,7 +130,7 @@ const Services = () => {
       >
         <Box
           sx={{
-            display: "flex",
+            // display: "flex",
             gap: 5,
             display: "grid",
             gridTemplateColumns: {
