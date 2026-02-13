@@ -143,6 +143,19 @@ const Services = () => {
           <Box
             sx={{
               // display: "flex",
+              opacity: 1,
+              animation: "fadeIn 0.9s ease forwards",
+              "@keyframes fadeIn": {
+                from: {
+                  opacity: 0,
+                  transform: "translateY(40px)",
+                },
+                to: {
+                  opacity: 1,
+                  transform: "translateY(0)",
+                },
+              },
+
               gap: 5,
               display: "grid",
               gridTemplateColumns: {
