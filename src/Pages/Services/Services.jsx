@@ -167,7 +167,7 @@ const Services = () => {
               <Box
                 sx={{
                   display: "flex",
-                  gap: 25,
+                  gap: 20,
                   mt: 4,
                   alignItems: "center",
                 }}
