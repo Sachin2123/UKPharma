@@ -25,7 +25,7 @@ const pages = [
   { id: 7, link: "/menshealth", page: "Men's Health" },
 ];
 
-const Header = () => {
+const Header = ({ menuColor }) => {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState();
 
@@ -54,6 +54,8 @@ const Header = () => {
 
   const handleSubmit = () => {};
 
+  console.log(menuColor);
+
   return (
     <div>
       <AppBar
@@ -77,7 +79,12 @@ const Header = () => {
                   onClick={handleOpenNavMenu}
                   color="inherit"
                 >
-                  <MenuIcon sx={{ fontSize: "30px", color: "black" }} />
+                  <MenuIcon
+                    sx={{
+                      fontSize: "30px",
+                      color: menuColor,
+                    }}
+                  />
                 </IconButton>
               </Tooltip>
 
@@ -106,8 +113,7 @@ const Header = () => {
                       }}
                       sx={{
                         textAlign: "center",
-                        color:
-                          location.pathname === item.link ? "black" : "grey",
+                        color: "black",
                       }}
                     >
                       {item.page}

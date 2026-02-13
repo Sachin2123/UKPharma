@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
+
 import ReusableModal from "./Component/Modal/ReusableModal";
 import Header from "./Component/Header/Header";
 import Dashboard from "./Pages/Dashboard/Dashboard";
@@ -10,17 +12,20 @@ import WeightLoss from "./Pages/Prescription/Prescription";
 import WomensHealth from "./Pages/WomensHealth/WomensHealth";
 import MensHealth from "./Pages/MensHealth/MensHealth";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
+  const location = useLocation();
+  const WhiteBurger = location.pathname === "/services";
+  // console.log(location);
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
-    <Router>
-      <Header />
+    <>
+      <Header menuColor={WhiteBurger ? "white" : "black"} />
       <ReusableModal open={open} onClose={handleClose} />
       <Routes>
         <Route path="/" element={<Dashboard />} />
@@ -35,7 +40,7 @@ function App() {
         <Route path="/womenshealth" element={<WomensHealth />} />
         <Route path="/menshealth" element={<MensHealth />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 

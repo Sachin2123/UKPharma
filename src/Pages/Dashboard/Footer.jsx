@@ -1,8 +1,8 @@
 import { Box, Typography, Divider } from "@mui/material";
-
+import { useLocation } from "react-router-dom";
 import logo from "../../Asset/Logo/Logo.jpeg";
 
-const Footer = () => {
+const Footer = ({ bgColor, textColor, p }) => {
   const InspirePharmacy = [
     {
       id: 1,
@@ -127,12 +127,15 @@ const Footer = () => {
       link: "",
     },
   ];
+
+  const location = useLocation();
+  const page = location.pathname === "/services";
   return (
     <Box>
       <Box
         sx={{
-          backgroundColor: "black",
-          color: "white",
+          backgroundColor: bgColor || "black",
+          color: textColor || "white",
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           gap: { xs: 5, md: 5 },
@@ -186,7 +189,7 @@ const Footer = () => {
               sx={{
                 textDecoration: "none",
                 cursor: "pointer",
-                color: "white",
+                color: textColor || "white",
                 "&:hover": {
                   color: "#FB642D",
                 },
@@ -212,7 +215,7 @@ const Footer = () => {
               sx={{
                 textDecoration: "none",
                 cursor: "pointer",
-                color: "white",
+                color: textColor || "white",
                 "&:hover": {
                   color: "#FB642D",
                 },
@@ -232,7 +235,7 @@ const Footer = () => {
           {OpeningTimes.map((val, index) => (
             <Typography
               sx={{
-                color: "white",
+                color: textColor || "white",
               }}
               key={index}
             >
@@ -255,7 +258,7 @@ const Footer = () => {
               sx={{
                 textDecoration: "none",
                 cursor: "pointer",
-                color: "white",
+                color: textColor || "white",
                 "&:hover": {
                   color: "#FB642D",
                 },
@@ -267,6 +270,7 @@ const Footer = () => {
           ))}
         </Box>{" "}
       </Box>
+      <Divider sx={{ backgroundColor: "white" }} />
       <Box
         sx={{
           backgroundColor: "white",
