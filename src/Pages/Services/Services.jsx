@@ -157,7 +157,7 @@ const Services = () => {
                   alignItems: "center",
                 }}
               >
-                <Typography sx={{ fontWeight: "700", fontSize: "1.75rem" }}>
+                <Typography sx={{ fontWeight: "700", fontSize: "1.2rem" }}>
                   {val.title}
                 </Typography>
                 <VaccinesIcon />
