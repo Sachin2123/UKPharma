@@ -141,8 +141,8 @@ const Services = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                filter: "blur(1px)",
-                transform: "scale(1.1)", // remove blur edges
+                // filter: "blur(1px)",
+                // transform: "scale(1.1)", // remove blur edges
                 zIndex: 0,
                 filter: loading
                   ? "brightness(0.6) blur(0px)"
