@@ -3,230 +3,202 @@ import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlin
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 import NHS from "../../Asset/NHS Image/NHS.svg";
 
+/* ===============================
+   DATA
+================================ */
+
+const benefits = [
+  "Secure and fast access to your NHS account",
+  "Easy and hassle-free connection",
+  "Your medicines sync automatically",
+];
+
+/* ===============================
+   REUSABLE PROFESSIONAL CARD CSS
+================================ */
+
+const cardUI = {
+  background: "#ffffff",
+  borderRadius: "20px",
+  p: { xs: 4, md: 6 },
+  border: "1px solid #edf2f7",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+  transition: "all 0.3s ease",
+  "&:hover": {
+    transform: "translateY(-6px)",
+    boxShadow: "0 16px 40px rgba(0,0,0,0.08)",
+  },
+};
+
+/* ===============================
+   COMPONENT
+================================ */
+
 const Prescription = ({ openModal }) => {
-  //   const handleSubmit = () => {
-  //     // console.log("Sign In");
-  //     setOpen(true);
-  //   };
   return (
     <Box
       sx={{
         px: { xs: 3, md: 10 },
-        py: { xs: 5, md: 0 },
-        height: { xs: "auto", md: "90vh" },
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        mt: { xs: "0rem", md: "6.2rem" },
-        backgroundColor:
-          "color-mix(in oklab, rgb(251, 100, 45) 10%, rgb(255, 255, 255))",
+        py: { xs: 6, md: 10 },
+        mt: { md: "5rem" },
+
+        /* NICE HEALTHCARE BACKGROUND */
+        background: "linear-gradient(180deg, #FFF5F0 0%, #ffffff 60%)",
       }}
     >
-      <Box
+      {/* ================= TITLE ================= */}
+
+      <Typography
         sx={{
-          gap: 6,
-          alignItems: "center",
+          textAlign: "center",
+          fontWeight: 700,
+          fontSize: { xs: "1.6rem", md: "2.4rem" },
+          mb: 7,
+          letterSpacing: "-0.4px",
+          mt: { xs: "2rem" },
         }}
       >
-        {/* Heading */}
-        <Typography
-          sx={{
-            mt: { xs: 2, md: 0 }, // ✅ margin-top controlled here
-            textAlign: "center",
-            fontWeight: "700",
-            fontSize: { xs: "1.5rem", md: "2rem" },
-          }}
-        >
-          How would you like to add your prescription?
-        </Typography>
+        How would you like to add your prescription?
+      </Typography>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: 5,
-            mt: 5,
-          }}
-        >
-          {/* Connect to NHS */}
+      {/* ================= GRID LAYOUT ================= */}
 
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
-            <Box
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+          gap: 5,
+        }}
+      >
+        {/* ================= LEFT COLUMN ================= */}
+
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          {/* NHS LOGIN CARD */}
+
+          <Box sx={cardUI}>
+            <Typography
               sx={{
-                backgroundColor: "white",
-                py: 5,
-                px: 7,
-                borderRadius: "30px",
+                textAlign: "center",
+                fontWeight: 700,
+                fontSize: "1.4rem",
               }}
             >
-              <Typography
-                sx={{
-                  textAlign: "center",
-                  fontSize: "1.5rem",
-                  fontWeight: "700",
-                }}
-              >
-                Connect to your NHS account
-              </Typography>
+              Connect to your NHS account
+            </Typography>
 
-              <Box sx={{ mt: 3, display: "flex", justifyContent: "center" }}>
-                <Button
-                  variant="contained"
-                  startIcon={
-                    <Box
-                      component="img"
-                      src={NHS}
-                      alt="NHS Logo"
-                      sx={{
-                        width: { xs: "45px", md: "52px" },
-                        height: { xs: "25px", md: "28px" },
-                      }}
-                    />
-                  }
-                  sx={{
-                    color: "white",
-                    fontSize: { xs: "0.72rem", md: "1.1rem" },
-                    textTransform: "none",
-                    borderRadius: "10px",
-                    px: { xs: 2, md: 3 },
-                    py: 1.5,
-                    gap: 1,
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "scale(1.05)",
-                    },
-                  }}
-                >
-                  Continue to NHS Login
-                </Button>
-              </Box>
-
-              {[
-                "Secure and fast access to your NHS account",
-                "Easy and hassle-free connection",
-                "Your medicines sync automatically",
-              ].map((text, index) => (
-                <Box
-                  key={index}
-                  sx={{
-                    mt: 4,
-                    display: "flex",
-                    gap: 2,
-                    alignItems: "center",
-                  }}
-                >
-                  <CheckCircleRoundedIcon />
-                  <Typography
-                    sx={{
-                      fontWeight: "500",
-                      fontSize: "1rem",
-                      fontFamily: "Inter, Arial, sans-serif",
-                    }}
-                  >
-                    {text}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
-
-            {/* Already have account */}
-            <Box
-              sx={{
-                borderRadius: "30px",
-                backgroundColor: "white",
-                py: 4,
-                px: { xs: 2, md: 7 },
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontWeight: "500",
-                  fontSize: { xs: "0.9rem", md: "1.1rem" },
-                  fontFamily: "Inter, Arial, sans-serif",
-                }}
-              >
-                Already have an account?
-              </Typography>
-
+            <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
               <Button
+                variant="contained"
+                startIcon={<Box component="img" src={NHS} sx={{ width: 48 }} />}
                 sx={{
-                  backgroundColor: "black",
-                  color: "white",
-                  py: { xs: 0.5, md: 1 },
-                  px: 2,
+                  backgroundColor: "#005EB8",
+                  borderRadius: "10px",
+                  px: 4,
+                  py: 1.4,
+                  fontWeight: 600,
                   textTransform: "none",
-                  transition: "transform 0.3s ease",
+                  boxShadow: "0 8px 20px rgba(0,94,184,0.25)",
+                  transition: "all .25s",
                   "&:hover": {
-                    transform: "scale(1.05)",
+                    backgroundColor: "#004a93",
+                    transform: "translateY(-2px)",
                   },
                 }}
-                onClick={openModal}
               >
-                Sign in
+                Continue to NHS Login
               </Button>
             </Box>
-          </Box>
 
-          {/* Search Medicine */}
-          <Box>
-            <Box
-              sx={{
-                backgroundColor: "white",
-                py: { xs: 6, md: 11 },
-                px: { xs: 5, md: 7 },
-                borderRadius: "30px",
-              }}
-            >
-              <Typography
+            {/* BENEFITS */}
+
+            {benefits.map((text, index) => (
+              <Box
+                key={index}
                 sx={{
-                  textAlign: "start",
-                  fontWeight: "700",
-                  fontSize: { xs: "1.5rem", md: "1.8rem" },
-                  fontFamily: "Inter, Arial, sans-serif",
-                  lineHeight: "1.334",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                  mt: 4,
                 }}
               >
-                Or search for your medicine
-              </Typography>
-
-              <Box
-                sx={{ display: "flex", gap: 2, alignItems: "center", mt: 3 }}
-              >
-                <TipsAndUpdatesOutlinedIcon />
-                <Typography
-                  sx={{
-                    fontSize: "18px",
-                    fontWeight: "700",
-                    fontFamily: "Inter, Arial, sans-serif",
-                    lineHeight: "1.75",
-                  }}
-                >
-                  Search tips
-                </Typography>
+                <CheckCircleRoundedIcon sx={{ color: "#22c55e" }} />
+                <Typography fontWeight={500}>{text}</Typography>
               </Box>
+            ))}
+          </Box>
 
-              <TextField
-                placeholder="Medicine name (e.g. Amoxicilin)"
-                label="Search for your medicine"
-                sx={{ mt: 3, width: { xs: "100%", md: "80%" } }}
-              />
+          {/* SIGN IN CARD */}
 
-              <Typography sx={{ mt: 4, fontWeight: 500 }}>
-                1. Copy the medicine name written on your prescription or
-                packaging
+          <Box
+            sx={{
+              ...cardUI,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Typography fontWeight={500}>Already have an account?</Typography>
+
+            <Button
+              onClick={openModal}
+              variant="outlined"
+              sx={{
+                borderRadius: "8px",
+                textTransform: "none",
+                fontWeight: 600,
+                borderColor: "#fb642d",
+                color: "#fb642d",
+                "&:hover": {
+                  backgroundColor: "#fff2ec",
+                  borderColor: "#fb642d",
+                },
+              }}
+            >
+              Sign in
+            </Button>
+          </Box>
+        </Box>
+
+        {/* ================= RIGHT COLUMN ================= */}
+
+        <Box sx={cardUI}>
+          <Typography
+            sx={{
+              fontWeight: 700,
+              fontSize: "1.6rem",
+              mb: 3,
+            }}
+          >
+            Or search for your medicine
+          </Typography>
+
+          <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+            <TipsAndUpdatesOutlinedIcon sx={{ color: "#fb642d" }} />
+            <Typography fontWeight={700}>Search tips</Typography>
+          </Box>
+
+          <TextField
+            fullWidth
+            label="Search for your medicine"
+            placeholder="Medicine name (e.g. Amoxicillin)"
+            sx={{
+              mt: 3,
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "10px",
+              },
+            }}
+          />
+
+          <Box sx={{ mt: 4 }}>
+            {[
+              "Copy the medicine name written on your prescription or packaging",
+              "Make sure you check you have chosen the right one",
+              "You can add more medicines later",
+            ].map((tip, i) => (
+              <Typography key={i} sx={{ mt: 2 }} fontWeight={500}>
+                {i + 1}. {tip}
               </Typography>
-
-              <Typography sx={{ mt: 3, fontWeight: 500 }}>
-                2. Make sure you check you have chosen the right one
-              </Typography>
-
-              <Typography sx={{ mt: 3, fontWeight: 500 }}>
-                3. You can add more medicines later
-              </Typography>
-            </Box>
+            ))}
           </Box>
         </Box>
       </Box>
