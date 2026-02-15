@@ -1,14 +1,15 @@
-import React from "react";
+import { React, useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import WeightLoss from "../../Asset/AnimatedPictures/WeighLoss.jpg";
-import EarWasRemoval from "../../Asset/AnimatedPictures/EarWasRemoval.jpg";
-import EmergencyContraception from "../../Asset/AnimatedPictures/EmergencyContraception.jpg";
-import PharmacyFirst from "../../Asset/AnimatedPictures/PharmacyFirst.jpg";
+import WeightLoss from "../../Asset/AnimatedPictures/WeighLoss.webp";
+import EarWasRemoval from "../../Asset/AnimatedPictures/EarWasRemoval.webp";
+import EmergencyContraception from "../../Asset/AnimatedPictures/EmergencyContraception.webp";
+import PharmacyFirst from "../../Asset/AnimatedPictures/PharmacyFirst.webp";
 
 const Services = () => {
+  const [loading, setLoadiing] = useState(false);
   const ServiceCards = [
     {
       cid: 1,
@@ -129,6 +130,7 @@ const Services = () => {
           >
             {/* BLURRED BACKGROUND IMAGE */}
             <Box
+              loading="lazy"
               component="img"
               src={val.img}
               alt={val.heading}
@@ -142,7 +144,13 @@ const Services = () => {
                 filter: "blur(1px)",
                 transform: "scale(1.1)", // remove blur edges
                 zIndex: 0,
+                filter: loading
+                  ? "brightness(0.6) blur(0px)"
+                  : "brightness(0.6) blur(20px)",
+
+                transform: loading ? "scale(1)" : "scale(1.05)",
               }}
+              onLoad={() => setLoadiing(true)}
             />
 
             {/* DARK OVERLAY (professional readability) */}

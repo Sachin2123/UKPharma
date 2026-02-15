@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
-import ConsultDoctor from "../../Asset/AnimatedPictures/ConsultDoctor.jpg";
+import ConsultDoctor from "../../Asset/AnimatedPictures/ConsultDoctor.webp";
 
 const ConsultPharmacist = () => {
   const diseases = [
@@ -27,7 +27,7 @@ const ConsultPharmacist = () => {
     >
       <Box
         component="img"
-        // src={ConsultImgSrc}
+        loading="lazy"
         src={ConsultDoctor}
         alt=""
         sx={{

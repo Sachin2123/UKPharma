@@ -4,6 +4,8 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import HairLoss from "../../Asset/AnimatedPictures/HairLoss.webp";
+import PeriodDelay from "../../Asset/AnimatedPictures/PeriodDelay.webp";
 const Visit = () => {
   const visitCards = [
     {
@@ -36,14 +38,16 @@ const Visit = () => {
     },
     {
       id: 5,
-      img: "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/05/man-getting-hair-loss-treatment-1.webp",
+      // img: "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/05/man-getting-hair-loss-treatment-1.webp",
+      img: HairLoss,
       title: "Hair Loss",
       desc: "Regain your confidence",
       btn: "Read More",
     },
     {
       id: 6,
-      img: "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/05/portrait-beautiful-smiling-blond-model-dressed-summer-hipster-clothes-1.webp",
+      // img: "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/05/portrait-beautiful-smiling-blond-model-dressed-summer-hipster-clothes-1.webp",
+      img: PeriodDelay,
       title: "Period Delay",
       desc: "Delay your cycle for up to 17 days",
       btn: "Read More",
@@ -101,25 +105,25 @@ const Visit = () => {
           gap: 3,
           display: "grid",
           gridTemplateColumns: {
-            xs: "1fr", // mobile → 1 card
-            sm: "repeat(2, 1fr)", // tablet → 2 cards
-            md: "repeat(3, 1fr)", // desktop → 3 cards
+            xs: "1fr",
+            sm: "repeat(2, 1fr)",
+            md: "repeat(3, 1fr)",
           },
         }}
       >
         {visitCards.map((val, index) => (
           <Card
+            className="card"
             key={val.id}
             sx={{
+              height: 300, // 👈 increase height here
+
               borderRadius: "18px",
-              overflow: "hidden",
+              position: "relative",
+              overflow: "hidden", // 👈 important
               display: "flex",
               flexDirection: "column",
-              // backgroundColor: "#F0C6C6",
               backgroundColor: "#F0C6C6",
-
-              position: "relative",
-
               transition: "all 0.35s ease",
               boxShadow: "0px 4px 15px rgba(0,0,0,0.15)",
 
@@ -128,29 +132,48 @@ const Visit = () => {
                 boxShadow: "0px 12px 35px rgba(0,0,0,0.3)",
               },
 
-              // image zoom effect on hover
               "&:hover .services-card-img": {
                 transform: "scale(1.1)",
               },
             }}
           >
-            {/* IMAGE */}
+            {/* IMAGE FULL BACKGROUND */}
             <CardMedia
               className="services-card-img"
               image={val.img}
               sx={{
-                height: 180,
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%", // 👈 full card height
                 transition: "transform 0.5s ease",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                zIndex: 1,
+              }}
+            />
+
+            {/* OPTIONAL DARK OVERLAY FOR TEXT VISIBILITY */}
+            <Box
+              sx={{
+                position: "absolute",
+                inset: 0,
+                background: "rgba(0,0,0,0.35)",
+                zIndex: 2,
               }}
             />
 
             {/* CONTENT */}
             <CardContent
+              className="Card-Content"
               sx={{
                 flexGrow: 1,
                 display: "flex",
                 flexDirection: "column",
                 gap: 1,
+                position: "relative",
+                zIndex: 3,
               }}
             >
               <Typography
@@ -160,7 +183,7 @@ const Visit = () => {
                   fontWeight: 700,
                   fontSize: "1.4rem",
                   fontFamily: "Quicksand, Sans-serif",
-                  color: "black",
+                  color: "white",
                   lineHeight: 1.3,
                 }}
               >
@@ -172,7 +195,7 @@ const Visit = () => {
                   fontWeight: 400,
                   fontSize: "0.95rem",
                   fontFamily: "Quicksand, Sans-serif",
-                  color: "black",
+                  color: "white",
                   lineHeight: 1.6,
                 }}
               >
@@ -181,17 +204,24 @@ const Visit = () => {
             </CardContent>
 
             {/* BUTTON */}
-            <CardActions sx={{ mt: "auto", p: 2 }}>
+            <CardActions
+              sx={{
+                mt: "auto",
+                p: 2,
+                position: "relative",
+                zIndex: 3,
+              }}
+            >
               <Button
                 sx={{
-                  padding: "10px 20px 10px 20px",
+                  padding: "10px 20px",
                   backgroundColor: "white",
                   color: "black",
-                  borderRadius: "10px 10px 10px 10px",
+                  borderRadius: "10px",
                   mr: 4,
-                  transition: "transform 0.3s ease", // smooth animation
+                  transition: "transform 0.3s ease",
                   "&:hover": {
-                    transform: "scale(1.05)", // zoom in
+                    transform: "scale(1.05)",
                   },
                 }}
               >

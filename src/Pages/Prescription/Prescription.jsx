@@ -44,6 +44,7 @@ const Prescription = ({ openModal }) => {
 
         /* NICE HEALTHCARE BACKGROUND */
         background: "linear-gradient(180deg, #FFF5F0 0%, #ffffff 60%)",
+        // backgroundColor: "#dd8574",
       }}
     >
       {/* ================= TITLE ================= */}

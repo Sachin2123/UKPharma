@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
-import PatientTreatment from "../../Asset/AnimatedPictures/PatientTreatment.jpg";
+import PatientTreatment from "../../Asset/AnimatedPictures/PatientTreatment.webp";
 
 const BookService = () => {
   return (

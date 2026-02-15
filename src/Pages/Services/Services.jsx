@@ -31,7 +31,7 @@ const styles = {
     px: { xs: 3, md: 5 },
     py: 5,
     mt: { xs: 0, md: "0rem" },
-    backgroundColor: "#0F172A",
+    backgroundColor: "#C0C0F2",
     fontFamily: "Quicksand, Sans-serif",
   },
 
@@ -109,7 +109,7 @@ const Services = () => {
     <Box>
       <Box sx={styles.section}>
         {/* HEADER */}
-        <Box sx={{ p: 6, color: "white" }}>
+        <Box sx={{ p: 6, color: "black" }}>
           <Typography
             sx={{
               textAlign: "center",
@@ -129,7 +129,7 @@ const Services = () => {
               textAlign: "center",
               mt: 2,
               fontSize: { xs: "1rem", md: "1.15rem" },
-              color: "#E2E8F0",
+              color: "black",
             }}
           >
             At Inspire Pharmacy, we’re dedicated to providing you the best
@@ -144,7 +144,7 @@ const Services = () => {
           </Box>
         </Box>
 
-        <Divider sx={{ backgroundColor: "#FB642D" }} />
+        <Divider sx={{ backgroundColor: "white" }} />
 
         {/* GRID */}
         <Box

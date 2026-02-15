@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import AppStore from "../../Asset/Rating/AppStore.jpeg";
 import GooglePlay from "../../Asset/Rating/GooglePlay.jpeg";
-import PharmacyStore from "../../Asset/AnimatedPictures/PharamcyStore.jpg";
+import PharmacyStore from "../../Asset/AnimatedPictures/PharamcyStore.webp";
 const Home = () => {
   const MobileStores = [
     {
@@ -23,19 +23,19 @@ const Home = () => {
       }}
     >
       {/* HERO SECTION */}
-      <Box sx={{ mt: { xs: "0rem", md: "0rem" }, position: "relative" }}>
+      <Box sx={{ mt: { xs: "3rem", md: "0rem" }, position: "relative" }}>
         {/* HERO IMAGE */}
         <Box className="dashboard-img">
           <Box
+            fetchPriority="high"
             component="img"
-            // src="https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/retired-man-holding-smartphone-chat-video-call-with-family-using-online-teleconference-remote-communication-pensioner-having-conversation-with-people-videoconference-meeting-1-1.webp"
             src={PharmacyStore}
             alt="Homepage Logo"
             sx={{
               width: "100%",
               height: { xs: "auto", md: "90vh" }, // responsive height
               minHeight: { xs: "550px", md: "700px" },
-              // objectFit: "cover",
+              objectFit: "cover",
               filter: "brightness(0.6)", // 👈 makes image dull
             }}
           />
@@ -179,6 +179,7 @@ const Home = () => {
                   }}
                 >
                   <Box
+                    loading="lazy"
                     component="img"
                     src={val.img}
                     alt={val.img}
