@@ -11,8 +11,8 @@ const ConsultPharmacist = () => {
     { id: 5, name: "UTIInsect Bites", color: "orange" },
     { id: 6, name: "Shingles & more...", color: "orange" },
   ];
-  const ConsultImgSrc =
-    "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/pharmacist-work-5-1024x683-1.webp";
+  // const ConsultImgSrc =
+  //   "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/pharmacist-work-5-1024x683-1.webp";
   return (
     <Box
       sx={{

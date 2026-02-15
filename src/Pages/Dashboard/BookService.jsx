@@ -3,8 +3,8 @@ import { Box, Button, Typography } from "@mui/material";
 import PatientTreatment from "../../Asset/AnimatedPictures/PatientTreatment.jpg";
 
 const BookService = () => {
-  const BookServiceImgSrc =
-    "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/AdobeStock_179996358-1024x682-1.webp";
+  // const BookServiceImgSrc =
+  //   "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/AdobeStock_179996358-1024x682-1.webp";
   return (
     <Box
       sx={{
