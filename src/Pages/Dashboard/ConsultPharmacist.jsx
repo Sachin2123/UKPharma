@@ -16,6 +16,7 @@ const ConsultPharmacist = () => {
   return (
     <Box
       sx={{
+        // backgroundColor: "#FF775C",
         px: { xs: 3, md: 10 },
         py: { xs: 5, md: 7 },
         display: "flex",

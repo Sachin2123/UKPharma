@@ -3,8 +3,6 @@ import { Box, Button, Typography } from "@mui/material";
 import PatientTreatment from "../../Asset/AnimatedPictures/PatientTreatment.jpg";
 
 const BookService = () => {
-  // const BookServiceImgSrc =
-  //   "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/AdobeStock_179996358-1024x682-1.webp";
   return (
     <Box
       sx={{
@@ -92,8 +90,8 @@ const BookService = () => {
         src={PatientTreatment}
         alt="Consult Pharmacist Image"
         sx={{
-          width: { xs: "100%", md: "40%" },
-          height: { xs: "100%", md: "50%" },
+          width: { xs: "100%", md: "35%" },
+          height: { xs: "100%", md: "40%" },
           objectFit: "cover",
           objectPosition: "center center",
           borderRadius: "30px 30px 30px 30px",

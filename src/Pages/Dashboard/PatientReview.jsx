@@ -46,7 +46,7 @@ const PatientReview = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "black",
+        backgroundColor: "#FF775C",
         display: "flex",
         flexDirection: "column",
         px: { xs: 3, md: 10 },

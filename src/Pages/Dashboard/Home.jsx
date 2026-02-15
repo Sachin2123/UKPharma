@@ -1,9 +1,8 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
-import Rater1 from "../../Asset/Rating/1stRater.jpeg";
 import AppStore from "../../Asset/Rating/AppStore.jpeg";
 import GooglePlay from "../../Asset/Rating/GooglePlay.jpeg";
-
+import PharmacyStore from "../../Asset/AnimatedPictures/PharamcyStore.jpg";
 const Home = () => {
   const MobileStores = [
     {
@@ -29,13 +28,15 @@ const Home = () => {
         <Box className="dashboard-img">
           <Box
             component="img"
-            src="https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/retired-man-holding-smartphone-chat-video-call-with-family-using-online-teleconference-remote-communication-pensioner-having-conversation-with-people-videoconference-meeting-1-1.webp"
+            // src="https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/retired-man-holding-smartphone-chat-video-call-with-family-using-online-teleconference-remote-communication-pensioner-having-conversation-with-people-videoconference-meeting-1-1.webp"
+            src={PharmacyStore}
             alt="Homepage Logo"
             sx={{
               width: "100%",
               height: { xs: "auto", md: "90vh" }, // responsive height
               minHeight: { xs: "550px", md: "700px" },
-              objectFit: "cover",
+              // objectFit: "cover",
+              filter: "brightness(0.6)", // 👈 makes image dull
             }}
           />
         </Box>
@@ -58,7 +59,7 @@ const Home = () => {
             sx={{
               fontFamily: "Quicksand, Sans-serif",
               fontWeight: "700",
-              mt: { xs: -15, md: 10 },
+              mt: { xs: -12, md: 10 },
               fontSize: {
                 xs: "2rem",
                 md: "clamp(3rem, 2.5385rem + 2.0513vw, 4rem)",
@@ -70,11 +71,9 @@ const Home = () => {
 
           <Typography
             sx={{
+              color: "#FDFBD4",
               fontFamily: "Quicksand, Sans-serif",
               fontWeight: "700",
-              background: "linear-gradient(90deg, #FB642D, #FFFFFF)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
               mt: { xs: 0, md: -2 },
               fontSize: {
                 xs: "2rem",
@@ -85,18 +84,31 @@ const Home = () => {
             Inspire Pharmacy
           </Typography>
 
-          <Typography sx={{ fontSize: "1.2rem", fontWeight: "700" }}>
+          <Typography
+            sx={{
+              color: "white",
+              fontSize: "1.2rem",
+              fontWeight: "700",
+            }}
+          >
             Free NHS Prescription Delivery
           </Typography>
 
-          <Typography sx={{ fontSize: { xs: "1rem", md: "1.125rem" }, mt: 2 }}>
+          <Typography
+            sx={{
+              fontSize: { xs: "1rem", md: "1.125rem" },
+              mt: 2,
+              color: "#FAFAFA",
+              textShadow: "0px 2px 6px rgba(0,0,0,0.4)",
+            }}
+          >
             With Inspire Pharmacy, you have access to the healthcare you need,
             when <br /> you need it. Easily book a service with us in just a few
             clicks.
           </Typography>
 
           {/* RATINGS */}
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               gap: 5,
@@ -126,7 +138,7 @@ const Home = () => {
               <Typography>Rating Stars</Typography>
               <Typography>Top -Rated</Typography>
             </Box>
-          </Box>
+          </Box> */}
 
           {/* APP STORE */}
           <Box
@@ -140,7 +152,7 @@ const Home = () => {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: { xs: "row", md: "column" },
+                flexDirection: { xs: "row", md: "row" },
                 gap: { xs: 1, md: 2 },
                 flexWrap: { xs: "wrap", md: "nowrap" }, // wrap on small screens
                 justifyContent: { xs: "center", md: "flex-start" },

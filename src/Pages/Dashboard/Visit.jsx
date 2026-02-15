@@ -53,7 +53,8 @@ const Visit = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#3B5768",
+        backgroundColor: "#FAEBEB",
+
         display: "flex",
         flexDirection: "column",
         px: { xs: 3, md: 10 },
@@ -70,7 +71,7 @@ const Visit = () => {
             },
             fontWeight: "700",
             fontFamily: "Quicksand, Sans-serif",
-            color: "white",
+            color: "black",
           }}
         >
           Visit Our Online Clinic
@@ -82,7 +83,7 @@ const Visit = () => {
           sx={{
             fontWeight: "700",
             fontFamily: "Quicksand, Sans-serif",
-            color: "white",
+            color: "black",
             textAlign: "center",
             mt: { xs: 3, md: 0 },
           }}
@@ -114,7 +115,9 @@ const Visit = () => {
               overflow: "hidden",
               display: "flex",
               flexDirection: "column",
-              backgroundColor: "#3B5768",
+              // backgroundColor: "#F0C6C6",
+              backgroundColor: "#F0C6C6",
+
               position: "relative",
 
               transition: "all 0.35s ease",
@@ -157,7 +160,7 @@ const Visit = () => {
                   fontWeight: 700,
                   fontSize: "1.4rem",
                   fontFamily: "Quicksand, Sans-serif",
-                  color: "white",
+                  color: "black",
                   lineHeight: 1.3,
                 }}
               >
@@ -169,7 +172,7 @@ const Visit = () => {
                   fontWeight: 400,
                   fontSize: "0.95rem",
                   fontFamily: "Quicksand, Sans-serif",
-                  color: "#E0E0E0",
+                  color: "black",
                   lineHeight: 1.6,
                 }}
               >
@@ -182,8 +185,8 @@ const Visit = () => {
               <Button
                 sx={{
                   padding: "10px 20px 10px 20px",
-                  backgroundColor: "#FB642D",
-                  color: "white",
+                  backgroundColor: "white",
+                  color: "black",
                   borderRadius: "10px 10px 10px 10px",
                   mr: 4,
                   transition: "transform 0.3s ease", // smooth animation
@@ -202,15 +205,15 @@ const Visit = () => {
       <Box sx={{ justifyContent: "Center", display: "flex", mt: 5 }}>
         <Button
           sx={{
-            fontWeight: "700",
+            fontWeight: "400",
             padding: "10px 20px 10px 20px",
-            backgroundColor: "#FB642D",
-            color: "White",
+            backgroundColor: "white",
+            color: "black",
             borderRadius: "10px 10px 10px 10px",
             transition: "transform 0.3s ease", // smooth animation
             "&:hover": {
               transform: "scale(1.05)", // zoom in
-              boxShadow: "0px 12px 40px rgba(0,0,0,0.3)",
+              boxShadow: "0px 4px 20px rgba(0,0,0,0.2)",
             },
           }}
         >

@@ -3,33 +3,41 @@ import { Box, Typography, Button } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
+import WeightLoss from "../../Asset/AnimatedPictures/WeighLoss.jpg";
+import EarWasRemoval from "../../Asset/AnimatedPictures/EarWasRemoval.jpg";
+import EmergencyContraception from "../../Asset/AnimatedPictures/EmergencyContraception.jpg";
+import PharmacyFirst from "../../Asset/AnimatedPictures/PharmacyFirst.jpg";
 
 const Services = () => {
   const ServiceCards = [
     {
       cid: 1,
-      img: "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/weightloss-e1742904339415-1.webp",
+      // img: "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/weightloss-e1742904339415-1.webp",
+      img: WeightLoss,
       heading: "Weight Loss Management",
       Desc: "Get expert support on your weight loss journey. Book a consultation with our friendly team and take the first step toward a healthier you.",
       btnText: "Book Now",
     },
     {
       cid: 2,
-      img: "	https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/freepik__background__14591-1.webp",
+      // img: "	https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/freepik__background__14591-1.webp",
+      img: EarWasRemoval,
       heading: "Ear Wax Removal",
       Desc: "Get safe and professional ear wax removal with support from our friendly experts to help you hear clearly and feel comfortable.",
       btnText: "Book Now",
     },
     {
       cid: 3,
-      img: "	https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/AdobeStock_333429626-1-e1745410447384.webp",
+      // img: "	https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/AdobeStock_333429626-1-e1745410447384.webp",
+      img: EmergencyContraception,
       heading: "Emergency Contraception",
       Desc: "Receive confidential support and quick access to emergency contraception, provided by our caring and professional team.",
       btnText: "Book Now",
     },
     {
       cid: 4,
-      img: "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/freepik__background__31852-1.webp",
+      // img: "https://ibstockpharmacy.co.uk/wp-content/uploads/2025/04/freepik__background__31852-1.webp",
+      img: PharmacyFirst,
       heading: "Pharmacy First",
       Desc: "Expert advice and treatment for common conditions, available directly from our friendly pharmacy team without the need for a GP appointment.",
       btnText: "Start Assessment",
