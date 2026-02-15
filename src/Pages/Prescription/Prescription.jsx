@@ -40,7 +40,7 @@ const Prescription = ({ openModal }) => {
       sx={{
         px: { xs: 2, md: 10 },
         py: { xs: 6, md: 10 },
-        mt: { md: "5rem" },
+        mt: { md: "0rem" },
 
         /* NICE HEALTHCARE BACKGROUND */
         background: "linear-gradient(180deg, #FFF5F0 0%, #ffffff 60%)",

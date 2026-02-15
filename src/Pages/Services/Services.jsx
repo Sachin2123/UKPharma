@@ -30,7 +30,7 @@ const styles = {
   section: {
     px: { xs: 3, md: 5 },
     py: 5,
-    mt: { xs: 0, md: "6rem" },
+    mt: { xs: 0, md: "0rem" },
     backgroundColor: "#0F172A",
     fontFamily: "Quicksand, Sans-serif",
   },

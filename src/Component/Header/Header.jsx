@@ -25,7 +25,7 @@ const pages = [
   { id: 7, link: "/menshealth", page: "Men's Health" },
 ];
 
-const Header = ({ menuColor, activePage }) => {
+const Header = ({ WhiteHeaderText, activePage }) => {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState();
 
@@ -62,8 +62,8 @@ const Header = ({ menuColor, activePage }) => {
         sx={{
           boxShadow: "none",
           top: 0,
-          backgroundColor: { md: "white", sm: "black", xs: "white" },
-          py: { xs: 1, md: 2 },
+          backgroundColor: { md: "transparent", sm: "white", xs: "white" },
+          py: { xs: 1, md: 1 },
         }}
       >
         <Container maxWidth="xl">
@@ -87,7 +87,7 @@ const Header = ({ menuColor, activePage }) => {
                   <MenuIcon
                     sx={{
                       fontSize: "30px",
-                      color: menuColor,
+                      color: "black",
                     }}
                   />
                 </IconButton>
@@ -160,10 +160,19 @@ const Header = ({ menuColor, activePage }) => {
                   "&:hover": {
                     cursor: "pointer",
                   },
+                  // backgroundColor: "white",
+                  // p: 1,
                 }}
                 onClick={() => navigate("/")}
               >
-                <img src={Logo} alt="Logo" style={{ width: "200px" }}></img>
+                <img
+                  src={Logo}
+                  alt="Logo"
+                  style={{
+                    marginRight: "10px",
+                    width: "200px",
+                  }}
+                ></img>
               </Box>
               {pages.map((item, index) => (
                 <Button
@@ -182,10 +191,12 @@ const Header = ({ menuColor, activePage }) => {
                     my: 2,
                     fontWeight: 600,
                     color:
-                      activePage.pathname === item.link ? "white" : "black",
+                      activePage.pathname === item.link
+                        ? "white"
+                        : WhiteHeaderText || "white",
 
                     backgroundColor:
-                      activePage.pathname === item.link ? "#FB642D" : "white",
+                      activePage.pathname === item.link ? "#FB642D" : "",
                   }}
                 >
                   {item.page}

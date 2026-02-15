@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
+import PatientTreatment from "../../Asset/AnimatedPictures/PatientTreatment.jpg";
 
 const BookService = () => {
   const BookServiceImgSrc =
@@ -14,7 +15,7 @@ const BookService = () => {
         flexDirection: { xs: "column", md: "row" },
 
         gap: { xs: 5, md: 20 },
-        backgroundColor: "#FB642D",
+        backgroundColor: "#C0C0F2",
       }}
     >
       <Box
@@ -30,7 +31,7 @@ const BookService = () => {
             fontSize: "clamp(2.1rem, 1.9154rem + 0.8205vw, 2.5rem)",
             fontFamily: "Quicksand, Sans-serif",
             fontWeight: "700",
-            color: "white",
+            color: "black",
           }}
         >
           Book a Service
@@ -41,7 +42,7 @@ const BookService = () => {
             fontFamily: "Nunito",
             fontSize: { xs: "1rem", md: "1.2rem" },
             fontWeight: 500,
-            color: "white",
+            color: "black",
             maxWidth: "650px",
             margin: "0 auto",
             lineHeight: 1.6,
@@ -87,11 +88,12 @@ const BookService = () => {
       </Box>
       <Box
         component="img"
-        src={BookServiceImgSrc}
+        // src={BookServiceImgSrc}
+        src={PatientTreatment}
         alt="Consult Pharmacist Image"
         sx={{
-          width: { xs: "100%", md: "50%" },
-          height: { xs: "100%", md: "60%" },
+          width: { xs: "100%", md: "40%" },
+          height: { xs: "100%", md: "50%" },
           objectFit: "cover",
           objectPosition: "center center",
           borderRadius: "30px 30px 30px 30px",

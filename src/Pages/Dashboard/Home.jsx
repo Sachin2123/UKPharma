@@ -24,7 +24,7 @@ const Home = () => {
       }}
     >
       {/* HERO SECTION */}
-      <Box sx={{ mt: { xs: "0rem", md: "5rem" }, position: "relative" }}>
+      <Box sx={{ mt: { xs: "0rem", md: "0rem" }, position: "relative" }}>
         {/* HERO IMAGE */}
         <Box className="dashboard-img">
           <Box
@@ -58,7 +58,7 @@ const Home = () => {
             sx={{
               fontFamily: "Quicksand, Sans-serif",
               fontWeight: "700",
-              mt: { xs: -15, md: 5 },
+              mt: { xs: -15, md: 10 },
               fontSize: {
                 xs: "2rem",
                 md: "clamp(3rem, 2.5385rem + 2.0513vw, 4rem)",

@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
+import ConsultDoctor from "../../Asset/AnimatedPictures/ConsultDoctor.jpg";
 
 const ConsultPharmacist = () => {
   const diseases = [
@@ -25,11 +26,12 @@ const ConsultPharmacist = () => {
     >
       <Box
         component="img"
-        src={ConsultImgSrc}
+        // src={ConsultImgSrc}
+        src={ConsultDoctor}
         alt=""
         sx={{
           width: { xs: "100%", md: "50%" },
-          height: { xs: "100%", md: "60%" },
+          height: { xs: "100%", md: "40%" },
           objectFit: "cover",
           objectPosition: "center center",
           borderRadius: "30px",
