@@ -38,7 +38,7 @@ const Prescription = ({ openModal }) => {
   return (
     <Box
       sx={{
-        px: { xs: 3, md: 10 },
+        px: { xs: 2, md: 10 },
         py: { xs: 6, md: 10 },
         mt: { md: "5rem" },
 
@@ -145,7 +145,7 @@ const Prescription = ({ openModal }) => {
               sx={{
                 borderRadius: "8px",
                 textTransform: "none",
-                fontWeight: 600,
+                fontWeight: 500,
                 borderColor: "#fb642d",
                 color: "#fb642d",
                 "&:hover": {
