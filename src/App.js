@@ -17,7 +17,7 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   const location = useLocation();
   const WhiteBurger = location.pathname === "/services";
-  // console.log(location);
+  console.log("App.js:-", location);
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -25,7 +25,10 @@ function App() {
 
   return (
     <>
-      <Header menuColor={WhiteBurger ? "white" : "black"} />
+      <Header
+        menuColor={WhiteBurger ? "black" : "black"}
+        activePage={location}
+      />
       <ReusableModal open={open} onClose={handleClose} />
       <Routes>
         <Route path="/" element={<Dashboard />} />

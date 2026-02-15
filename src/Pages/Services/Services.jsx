@@ -117,6 +117,7 @@ const Services = () => {
                 xs: "1.9rem",
                 md: "clamp(2.4rem, 2.1231rem + 1.2308vw, 3.5rem)",
               },
+              mt: { xs: 2, md: 0 },
               fontWeight: 600,
             }}
           >

@@ -55,7 +55,7 @@ const Prescription = ({ openModal }) => {
           fontSize: { xs: "1.6rem", md: "2.4rem" },
           mb: 7,
           letterSpacing: "-0.4px",
-          mt: { xs: "2rem" },
+          mt: { xs: "3rem" },
         }}
       >
         How would you like to add your prescription?

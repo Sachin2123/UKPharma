@@ -12,7 +12,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ReusableModal from "../Modal/ReusableModal";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Logo from "../../Asset/Logo/Logo.jpeg";
 import NHS from "../../Asset/NHS Image/NHS.svg";
 const pages = [
@@ -25,14 +25,13 @@ const pages = [
   { id: 7, link: "/menshealth", page: "Men's Health" },
 ];
 
-const Header = ({ menuColor }) => {
+const Header = ({ menuColor, activePage }) => {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState();
 
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -54,7 +53,7 @@ const Header = ({ menuColor }) => {
 
   const handleSubmit = () => {};
 
-  console.log(menuColor);
+  // console.log("Headers:- ", activePage);
 
   return (
     <div>
@@ -63,13 +62,19 @@ const Header = ({ menuColor }) => {
         sx={{
           boxShadow: "none",
           top: 0,
-          backgroundColor: { md: "white", sm: "black", xs: "transparent" },
+          backgroundColor: { md: "white", sm: "black", xs: "white" },
           py: { xs: 1, md: 2 },
         }}
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "flex", md: "none" },
+                justifyContent: "space-between",
+              }}
+            >
               <Tooltip title="Pages">
                 <IconButton
                   size="large"
@@ -87,6 +92,17 @@ const Header = ({ menuColor }) => {
                   />
                 </IconButton>
               </Tooltip>
+              <Box
+                sx={{
+                  display: { xs: "flex", md: "none" },
+                  "&:hover": {
+                    cursor: "pointer",
+                  },
+                }}
+                onClick={() => navigate("/")}
+              >
+                <img src={Logo} alt="Logo" style={{ width: "140px" }}></img>
+              </Box>
 
               <Menu
                 id="menu-appbar"
@@ -105,20 +121,28 @@ const Header = ({ menuColor }) => {
                 sx={{ display: { xs: "block", md: "none" } }}
               >
                 {pages.map((item, index) => (
-                  <MenuItem key={index} onClick={handleCloseNavMenu}>
-                    <Typography
-                      onClick={() => {
-                        handleNavigation(item.link);
-                        // console.log(item);
-                      }}
-                      sx={{
-                        textAlign: "center",
-                        color: "black",
-                      }}
-                    >
-                      {item.page}
-                    </Typography>
-                  </MenuItem>
+                  <Box sx={{ backgroundColor: "white" }}>
+                    {" "}
+                    <MenuItem key={index} onClick={handleCloseNavMenu}>
+                      <Typography
+                        onClick={() => {
+                          handleNavigation(item.link);
+                          // console.log(item);
+                        }}
+                        sx={{
+                          textAlign: "center",
+                          fontWeight:
+                            activePage.pathname === item.link ? "600" : "400",
+                          color:
+                            activePage.pathname === item.link
+                              ? "#FB642D"
+                              : "black",
+                        }}
+                      >
+                        {item.page}
+                      </Typography>
+                    </MenuItem>
+                  </Box>
                 ))}
               </Menu>
             </Box>
@@ -139,7 +163,7 @@ const Header = ({ menuColor }) => {
                 }}
                 onClick={() => navigate("/")}
               >
-                <img src={Logo} alt="Logo" style={{ width: "230px" }}></img>
+                <img src={Logo} alt="Logo" style={{ width: "200px" }}></img>
               </Box>
               {pages.map((item, index) => (
                 <Button
@@ -157,7 +181,11 @@ const Header = ({ menuColor }) => {
                     gap: 0.5,
                     my: 2,
                     fontWeight: 600,
-                    color: location.pathname === item.link ? "black" : "black",
+                    color:
+                      activePage.pathname === item.link ? "white" : "black",
+
+                    backgroundColor:
+                      activePage.pathname === item.link ? "#FB642D" : "white",
                   }}
                 >
                   {item.page}
@@ -168,11 +196,11 @@ const Header = ({ menuColor }) => {
               <Box sx={{ flexGrow: 0 }}>
                 {" "}
                 <Button
-                  // onClick={handleOpenUserMenu}
+                  variant="outlined"
                   sx={{
+                    borderColor: "#FB642D",
                     padding: "10px 20px 10px 20px",
-                    backgroundColor: "#FB642D",
-                    color: "white",
+                    color: "#FB642D",
                     borderRadius: "10px 10px 10px 10px",
                     marginLeft: "20px",
                     mt: 1.5,
