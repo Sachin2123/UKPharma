@@ -20,7 +20,7 @@ const benefits = [
 const cardUI = {
   background: "#ffffff",
   borderRadius: "20px",
-  p: { xs: 4, md: 6 },
+  p: { xs: 3, md: 6 },
   border: "1px solid #edf2f7",
   boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
   transition: "all 0.3s ease",
